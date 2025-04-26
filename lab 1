@@ -1,0 +1,131 @@
+LAB 1 
+1. Add two numbers
+a = 20
+b = 20
+print("Addition:", a + b)
+ Output: Addition: 40
+
+2. Subtract two numbers
+a = 20
+b = 10
+print("Subtraction:", a - b)
+ Output: Subtraction: 10
+
+3. Multiply two numbers
+a = 5
+b = 6
+print("Multiplication:", a * b)
+ Output: Multiplication: 30
+
+4.Divide two numbers
+a = 20
+b = 5
+print("Division:", a / b)
+ Output: Division: 4.0
+
+5. Add, multiply, subtract and divide two numbers
+a = 10
+b = 2
+print("Addition:", a + b, "Subtraction:", a - b, "Multiplication:", a * b, "Division:", a / b)
+Output: Addition: 12 Subtraction: 8 Multiplication: 20 Division: 5.0
+
+6.Convert hours into minutes
+hours = 5
+print("Minutes:", hours * 60)
+Output: Minutes: 300
+
+7.Convert minutes into hours
+minutes = 300
+print("Hours:", minutes / 60)
+ Output: Hours: 5.0
+
+8. Convert dollars into Rs. Where 1 $ = 48 Rs.
+dollars = 10
+print("Rupees:", dollars * 48)
+Output: Rupees: 480
+
+9.Convert Rs. into dollars where 1 $ = 48 Rs.
+rupees = 480
+print("Dollars:", rupees / 48)
+ Output: Dollars: 10.0
+
+10. Convert dollars into pound where 1 $ = 48 Rs. And 1 pound = 70 Rs.
+dollars = 10
+print("Pounds:", (dollars * 48) / 70)
+ Output: Pounds: 6.857142857142857
+
+11. Convert grams into kg
+grams = 1000
+print("Kilograms:", grams / 1000)
+
+
+12. Convert kgs into grams
+kgs = 5
+print("Grams:", kgs * 1000)
+Output: Grams: 5000
+
+13. Convert bytes into KB, MB and GB
+bytes = 1024000
+print("KB:", bytes / 1024, "MB:", bytes / (1024**2), "GB:", bytes / (1024**3))
+Output: KB: 1000.0 MB: 0.9765625 GB: 0.00095367431640625
+
+14. Convert Celsius into Fahrenheit. F = (9/5 * C) + 32
+Celsius = 25
+print("Fahrenheit:", (9/5 * celcius) + 32)
+ Output: Fahrenheit: 77.0
+
+15. Convert Fahrenheit into Celsius. C = 5/9 * (F – 32)
+fahrenheit = 77
+print("Celcius:", 5/9 * (fahrenheit - 32))
+Output: Celcius: 25.0
+
+16. Calculate interest where I = PRN/100
+p = 1000
+r = 5
+n = 2
+print("Interest:", (p * r * n) / 100)
+.Output: Interest: 100.0
+
+18.Calculate area & perimeter of a square. A = L^2, P = 4L
+length = 4
+print("Area of square:", length**2, "Perimeter of square:", 4 * length)
+Output: Area of square: 16 Perimeter of square: 16
+
+19. Calculate area & perimeter of a rectangle. A = L*B, P = 2(L+B)
+length = 6
+breadth = 5
+print("Area of rectangle:", length * breadth, "Perimeter of rectangle:", 2 * (length + breadth))
+Output: Area of rectangle:  Perimeter of rectangle: 20
+
+20 Calculate area of a circle. A = 22/7 * R * R
+radius = 7
+print("Area of circle:", (22/7) * radius * radius)
+Output: Area of circle: 154.0
+
+21.Calculate area of a triangle. A = H*L/2
+height = 5
+base = 10
+print("Area of triangle:", (height * base) / 2)
+Output: Area of triangle: 25.0
+
+22.Calculate net salary where net salary = gross salary + allowance – deduction.
+gross_salary = 50000
+print("Net Salary:", gross_salary + (0.1 * gross_salary) - (0.03 * gross_salary))
+Output: Net Salary: 53500.0
+
+23.Calculate net sales where net sales = gross sales – 10% discount of gross sales.
+gross_sales = 100000
+print("Net Sales:", gross_sales - (0.1 * gross_sales))
+Output: Net Sales: 90000.0
+
+24.Calculate average of three subjects along with their total.
+marks = [85, 90, 95]
+print("Total Marks:", sum(marks), "Average Marks:", sum(marks) / len(marks))
+Output: Total Marks: 270 Average Marks: 90.0
+
+25. Swap two values
+a = 30
+b = 10
+a, b = b, a
+print("Swapped Values:", a, b)
+Output: Swapped Values: 30 10
