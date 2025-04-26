@@ -1,0 +1,62 @@
+STRINGS IN PYTHON 
+1) Count how many vowels are there in a string. Accept the string from the user
+string = "hello world"
+vowels = "aeiouAEIOU"
+count = 0
+for char in string:
+    if char in vowels:
+        count += 1
+print(count)
+Output: 3
+
+2) Write your own functions (without using built-in functions) to convert all characters of a string into lower case/upper case/toggle case
+string = "HelLo WoRLd"
+lowercase = ""
+for char in string:
+    if 'A' <= char <= 'Z':
+        lowercase += chr(ord(char) + 32)
+    else:
+        lowercase += char
+uppercase = ""
+for char in string:
+    if 'a' <= char <= 'z':
+        uppercase += chr(ord(char) - 32)
+    else:
+        uppercase += char
+togglecase = ""
+for char in string:
+    if 'a' <= char <= 'z':
+        togglecase += chr(ord(char) - 32)
+    elif 'A' <= char <= 'Z':
+        togglecase += chr(ord(char) + 32)
+    else:
+        togglecase += char
+print(lowercase)
+print(uppercase)
+print(togglecase)
+ Output: hello world
+ Output: HELLO WORLD
+ Output: hELlO wOrlD
+
+ 3) Accept two strings. Check whether one string is there in another string
+string1 = "hello world"
+string2 = "world"
+if string2 in string1:
+    print(True)
+else:
+    print(False)
+ Output: True
+
+ 4) Write a function that removes one string from another string, if present
+onestring = "abcdef"
+removestring = "cd"
+result = ""
+i = 0
+while i < len(onestring):
+    if onestring[i:i+len(removestring)] == removestring:
+        i += len(removestring)
+    else:
+        result += onestring[i]
+        i += 1
+print(result)
+ Output: abef
