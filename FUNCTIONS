@@ -173,3 +173,43 @@ def length(s):
 print(length("hello"))
 
 Output: 5
+
+1. Define three functions fun(), disp() and msg(). Store them in a list and call them one by one in a loop
+def fun(): print("Function fun called")
+def disp(): print("Function disp called")
+def msg(): print("Function msg called")
+functions = [fun, disp, msg]
+for func in functions: func()
+
+Output: Function fun called Function disp called Function msg called
+
+ 2. Two lists, one containing numbers from 1 to 6, and another containing numbers from 6 to 1. Obtain a list with corresponding element sums using map and lambda
+list1 = [1, 2, 3, 4, 5, 6]
+list2 = [6, 5, 4, 3, 2, 1]
+sum_list = list(map(lambda x, y: x + y, list1, list2))
+print(sum_list)
+
+Output: [7, 7, 7, 7, 7, 7]
+
+ 3. Generate the list of 10 different random numbers between -15 and 15. Create a new list by obtaining square of all numbers
+import random
+random_numbers = random.sample(range(-15, 16), 10)
+squares = list(map(lambda x: x**2, random_numbers))
+print(random_numbers)
+print(squares)
+
+Output: (Varies due to randomness)
+
+ 4. Print those strings which are palindromes from the given list
+lst = ['madam', 'Python', 'malayalam', '12321']
+palindromes = list(filter(lambda x: str(x) == str(x)[::-1], lst))
+print(palindromes)
+
+Output: ['madam', 'malayalam', '12321']
+
+ 5. Filter out names from a list whose length is more than 8 characters
+faculty_names = ["Christopher", "Alice", "Jonathan", "Bob", "Elizabeth"]
+long_names = list(filter(lambda name: len(name) > 8, faculty_names))
+print(long_names)
+
+Output: ['Christopher', 'Jonathan', 'Elizabeth']
