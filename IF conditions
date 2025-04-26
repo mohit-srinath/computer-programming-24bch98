@@ -1,0 +1,117 @@
+IF CONDITIONS 
+1) Print largest and smallest values out of two
+a, b = 10, 5
+if a > b: print("Largest:", a, "Smallest:", b)
+else: print("Largest:", b, "Smallest:", a)
+
+Output: Largest: 10 Smallest: 5
+
+ 2) Print largest and smallest values out of three
+a, b, c = 10, 15, 5
+if a > b and a > c: print("Largest:", a)
+elif b > c: print("Largest:", b)
+else: print("Largest:", c)
+
+if a < b and a < c: print("Smallest:", a)
+elif b < c: print("Smallest:", b)
+else: print("Smallest:", c)
+
+ Output: Largest: 15 Smallest: 5
+
+3) Check whether a given number is odd or even
+number = 7
+if number % 2 == 0: print("Even")
+else: print("Odd")
+
+Output: Odd
+
+4) Check whether a given number is divisible by 10 or not
+number = 20
+if number % 10 == 0: print("Divisible by 10")
+else: print("Not divisible by 10")
+
+Output: Divisible by 10
+
+5) Accept age of a person. If age is less than 18, print minor otherwise Major age = 20
+if age < 18: print("Minor")
+else: print("Major")
+Output: Major
+
+6) Accept a number from the user. And print number of digits in it
+number = 12345
+print("Number of digits:", len(str(abs(number))))
+
+Output: Number of digits: 5
+
+ 7) Accept a year value from the user. Check whether it is a leap year or not
+year = 2024
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0): print("Leap Year")
+else: print("Not a Leap Year")
+
+ Output: Leap Year
+
+ 8) Check whether a triangle is valid or not when the three angles of the triangle are entered
+a, b, c = 60, 60, 60
+if a + b + c == 180: print("Valid Triangle")
+else: print("Invalid Triangle")
+
+Output: Valid Triangle
+
+ 9) Print absolute value of a given number
+number = -5
+print("Absolute Value:", abs(number))
+
+ Output: Absolute Value: 5
+
+10) Given the length and breadth of a rectangle, find whether the area is greater than perimeter
+length, breadth = 6, 4
+area = length * breadth
+perimeter = 2 * (length + breadth)
+if area > perimeter: print("Area is greater than perimeter")
+else: print("Perimeter is greater than or equal to area")
+
+ Output: Area is greater than perimeter
+
+ 11) Check if three points fall on one straight line
+x1, y1, x2, y2, x3, y3 = 0, 0, 1, 1, 2, 2
+if (y2 - y1) * (x3 - x2) == (y3 - y2) * (x2 - x1): print("Points are on one straight line")
+else: print("Points are not on one straight line")
+
+Output: Points are on one straight line
+
+ 12) Check if a point lies inside, on, or outside the circle
+cx, cy, radius, px, py = 0, 0, 5, 3, 3
+distance = ((px - cx)**2 + (py - cy)**2)**0.5
+if distance < radius: print("Point is inside the circle")
+elif distance == radius: print("Point is on the circle")
+else: print("Point is outside the circle")
+
+ Output: Point is inside the circle
+
+13) Convert number 0 to 19 to its equivalent words
+number = 19
+words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+         "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+if 0 <= number <= 19: print(words[number])
+
+ Output: nineteen
+
+14) Accept marks of three subjects and determine status, average, and grades
+marks = [85, 40, 39]
+total = sum(marks)
+average = total / len(marks)
+status = "Pass"
+grades = []
+for mark in marks:
+    if mark <= 39: grades.append("F"); status = "Fail"
+    elif mark <= 44: grades.append("P")
+    elif mark <= 49: grades.append("C")
+    elif mark <= 54: grades.append("B")
+    elif mark <= 59: grades.append("B+")
+    elif mark <= 69: grades.append("A")
+    elif mark <= 79: grades.append("A+")
+    elif mark <= 100: grades.append("O")
+    else: grades.append("NA")
+print("Total Marks:", total, "Average Marks:", average, "Status:", status, "Grades:", grades)
+
+Output: Total Marks: 164 Average Marks: 54.666666666666664 Status: Fail Grades: ['O', 'P', 'F']
