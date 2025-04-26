@@ -1,0 +1,175 @@
+FUNCTIONS 
+
+1. Write a program that defines a function count_lower_upper() that accepts a string and calculates the number of uppercase and lowercase alphabets in it
+def count_lower_upper(s):
+    result = {"lowercase": 0, "uppercase": 0}
+    for char in s:
+        if char.islower():
+            result["lowercase"] += 1
+        elif char.isupper():
+            result["uppercase"] += 1
+    return result
+print(count_lower_upper("Hello World"))
+
+Output: {'lowercase': 8, 'uppercase': 2}
+
+ 2. Write a program that defines a function compute() that calculates the value of n + nn + nnn + nnnn
+def compute(n):
+    total = sum(int(str(n) * i) for i in range(1, 5))
+    return total
+for i in range(4, 8):
+    print(f"n={i}: {compute(i)}")
+
+Output: n=4: 4936 n=5: 6170 n=6: 7404 n=7: 8638
+
+ 3. Write a program that defines a function create_array() to create and return a 3D array
+def create_array(x, y, z, value):
+    return [[[value for _ in range(z)] for _ in range(y)] for _ in range(x)]
+print(create_array(3, 4, 5, 1))
+
+Output: [[[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]], ...]
+
+ 4. Write a program that defines a function sum_avg() to accept marks of five subjects and calculates total and average
+def sum_avg(marks):
+    total = sum(marks)
+    avg = total / len(marks)
+    return total, avg
+print(sum_avg([85, 90, 78, 92, 88]))
+
+Output: (433, 86.6)
+
+ 5. Write a program to check whether a given string is pangram or not
+def ispangram(s):
+    alphabets = set("abcdefghijklmnopqrstuvwxyz")
+    return alphabets <= set(s.lower())
+print(ispangram("The quick brown fox jumps over the lazy dog"))
+
+Output: True
+
+ 6. Write a function to create and return a list containing tuples of the form (x, x^2, x^3)
+def create_list(end):
+    return [(x, x**2, x**3) for x in range(1, end + 1)]
+print(create_list(5))
+
+Output: [(1, 1, 1), (2, 4, 8), (3, 9, 27), (4, 16, 64), (5, 25, 125)]
+
+ 7. Write a program that defines a function ispalindrome()
+def ispalindrome(s):
+    s = ''.join(filter(str.isalnum, s)).lower()
+    return s == s[::-1]
+print(ispalindrome("A man a plan a canal Panama"))
+
+Output: True
+
+ 8. Write a program that defines a function convert() to remove duplicates and sort
+def convert(s):
+    words = sorted(set(s.split()))
+    return " ".join(words)
+print(convert("dog cat bird bird cat fish"))
+
+Output: bird cat dog fish
+
+ 9. Write a program that defines a function count_alpha_digits()
+def count_alpha_digits(s):
+    result = {"alphabets": 0, "digits": 0}
+    for char in s:
+        if char.isalpha():
+            result["alphabets"] += 1
+        elif char.isdigit():
+            result["digits"] += 1
+    return result
+print(count_alpha_digits("Hello123"))
+
+Output: {'alphabets': 5, 'digits': 3}
+
+ 10. Write a program that defines a function called frequency()
+def frequency(s):
+    words = s.split()
+    freq = {word: words.count(word) for word in sorted(set(words))}
+    return freq
+print(frequency("dog cat bird bird cat fish"))
+
+Output: {'bird': 2, 'cat': 2, 'dog': 1, 'fish': 1}
+
+ 11. Write a function create_list() that creates and returns intersection of two lists
+def create_list(list1, list2):
+    return list(set(list1) & set(list2))
+print(create_list([1, 2, 3, 4], [3, 4, 5, 6]))
+
+Output: [3, 4]
+
+Write following programs considering functions or recursive functions in mind:
+
+ 1. Recursive function to obtain prime factors of a number
+def prime_factors(n, factor=2):
+    if factor > n:
+        return []
+    if n % factor == 0:
+        return [factor] + prime_factors(n // factor, factor)
+    return prime_factors(n, factor + 1)
+print(prime_factors(56))
+
+Output: [2, 2, 2, 7]
+
+2. Recursive function to find binary equivalent of a number
+def to_binary(n):
+    if n == 0:
+        return ""
+    return to_binary(n // 2) + str(n % 2)
+print(to_binary(10))
+
+Output: 1010
+
+ 3. Recursive function to count vowels in a string
+def count_vowels(s):
+    if not s:
+        return 0
+    return (1 if s[0] in "aeiouAEIOU" else 0) + count_vowels(s[1:])
+print(count_vowels("hello world"))
+
+Output: 3
+
+ 4. Recursive function to reverse a list of numbers
+def reverse_list(lst):
+    if not lst:
+        return []
+    return [lst[-1]] + reverse_list(lst[:-1])
+print(reverse_list([1, 2, 3, 4, 5]))
+
+Output: [5, 4, 3, 2, 1]
+
+ 5. Recursive function to calculate a^b
+def power(a, b):
+    if b == 0:
+        return 1
+    return a * power(a, b - 1)
+print(power(2, 3))
+
+Output: 8
+
+ 6. Recursive function to sanitize a list
+def sanitize_list(lst):
+    if not lst:
+        return []
+    return [max(0, lst[0])] + sanitize_list(lst[1:])
+print(sanitize_list([-1, 2, -3, 4]))
+
+Output: [0, 2, 0, 4]
+
+ 7. Recursive function to obtain average of a list
+def average(lst, total=0, count=0):
+    if not lst:
+        return total / count if count != 0 else 0
+    return average(lst[1:], total + lst[0], count + 1)
+print(average([1, 2, 3, 4, 5]))
+
+Output: 3.0
+
+ 8. Recursive function to obtain length of a string
+def length(s):
+    if not s:
+        return 0
+    return 1 + length(s[1:])
+print(length("hello"))
+
+Output: 5
