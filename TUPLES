@@ -1,0 +1,59 @@
+TUPLES 
+1. A list contains names of boys and girls as its elements. Boys’ names are stored as tuples. 
+Write a program to find out number of boys and girls in the list.
+names = [("John",), "Alice", ("Mike",), "Sophia", ("Jake",)]
+boys = sum(1 for name in names if isinstance(name, tuple))
+girls = len(names) - boys
+print("Number of boys:", boys, "Number of girls:", girls)
+
+Output: Number of boys: 3 Number of girls: 2
+
+2. A list contains tuples containing roll no., name and age of student. Write a python 
+program to create three lists separately for roll no., name and age.
+students = [(1, "John", 20), (2, "Alice", 21), (3, "Mike", 19)]
+roll_no = [student[0] for student in students]
+names = [student[1] for student in students]
+ages = [student[2] for student in students]
+print("Roll Numbers:", roll_no, "Names:", names, "Ages:", ages)
+
+ Output: Roll Numbers: [1, 2, 3] Names: ['John', 'Alice', 'Mike'] Ages: [20, 21, 19]
+
+ 3. Suppose a date is represented as a tuple (d, m, y). Create two date tuples and find the 
+number of days between the two dates.
+from datetime 
+import date
+date1 = (1, 1, 2023)
+date2 = (10, 1, 2023)
+days_between = (date(date2[2], date2[1], date2[0]) - date(date1[2], date1[1], date1[0])).days
+print("Days between:", days_between)
+
+ Output: Days between: 9
+
+4. Create a list of tuples containing a food item and its price. Sort the tuples in descending
+ order by price.
+food_prices = [("Burger", 50), ("Pizza", 100), ("Fries", 30)]
+sorted_food_prices = sorted(food_prices, key=lambda x: x[1], reverse=True)
+print("Sorted food prices:", sorted_food_prices)
+
+ Output: Sorted food prices: [('Pizza', 100), ('Burger', 50), ('Fries', 30)]
+
+ 5. Remove empty tuple(s) from the list of tuples.
+tuples_list = [(), (1, 2), (), (3, 4)]
+non_empty_tuples = [t for t in tuples_list if t]
+print("Non-empty tuples:", non_empty_tuples)
+
+ Output: Non-empty tuples: [(1, 2), (3, 4)]
+
+ 6. Modify an element of a tuple.
+my_tuple = (1, 2, 3)
+modified_tuple = my_tuple[:1] + (99,) + my_tuple[2:]
+print("Modified tuple:", modified_tuple)
+
+Output: Modified tuple: (1, 99, 3)
+
+ 7. Delete an element of a tuple.
+my_tuple = (1, 2, 3)
+deleted_element_tuple = my_tuple[:1] + my_tuple[2:]
+print("Tuple after deletion:", deleted_element_tuple)
+
+ Output: Tuple after deletion: (1, 3)
