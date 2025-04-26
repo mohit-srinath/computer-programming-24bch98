@@ -1,0 +1,117 @@
+LISTS 
+ 1. Create a list of 5 odd integers using random nos. Similarly create a list of 4 even integers using random nos. Replace the third element of odd integers with a list of 4 even integers. Flattern, sort and print the list. Provide appropriate message at each stage.
+import random
+odd_integers = [random.randint(1, 99) for _ in range(5) if random.randint(1, 99) % 2 != 0]
+even_integers = [random.randint(1, 99) for _ in range(4) if random.randint(1, 99) % 2 == 0]
+odd_integers[2] = even_integers
+flattened_sorted = sorted([item for sublist in odd_integers for item in (sublist if isinstance(sublist, list) else [sublist])])
+print("Odd Integers:", odd_integers)
+print("Even Integers:", even_integers)
+print("Flattened and Sorted List:", flattened_sorted)
+
+Output: (Varies due to randomness)
+
+2. Generate 20 random integers and store them in a list. Accept a number from the user and print position of all occurrences of that number in the list.
+random_numbers = [random.randint(1, 50) for _ in range(20)]
+number_to_search = int(input("Enter a number to search: "))
+positions = [index for index, value in enumerate(random_numbers) if value == number_to_search]
+print("Random Numbers:", random_numbers)
+print(f"Positions of {number_to_search}:", positions if positions else "Not found")
+
+Output: (Varies due to randomness)
+
+3. Generate 50 random numbers in the range 1 and 30. Remove all duplicate values from the list.
+random_list = [random.randint(1, 30) for _ in range(50)]
+unique_values = list(set(random_list))
+print("Original List:", random_list)
+print("Unique Values:", unique_values)
+
+Output: (Varies due to randomness)
+
+4. Generate 30 random numbers and put them in a list. Create two more lists – one containing only +ve numbers and another with –ve nos.
+random_nums = [random.randint(-50, 50) for _ in range(30)]
+positive_nums = [num for num in random_nums if num > 0]
+negative_nums = [num for num in random_nums if num < 0]
+print("Random Numbers:", random_nums)
+print("Positive Numbers:", positive_nums)
+print("Negative Numbers:", negative_nums)
+
+Output: (Varies due to randomness)
+
+5. A list contains 5 strings. Convert all these strings to uppercase.
+strings = ["hello", "world", "python", "programming", "example"]
+uppercased = [string.upper() for string in strings]
+print("Original Strings:", strings)
+print("Uppercased Strings:", uppercased)
+ Output: Original Strings: ['hello', 'world', 'python', 'programming', 'example']
+
+ Output: Uppercased Strings: ['HELLO', 'WORLD', 'PYTHON', 'PROGRAMMING', 'EXAMPLE']
+
+6. Convert list of temperatures in Fahrenheit degrees to equivalent Celsius degrees.
+fahrenheit_temps = [32, 45, 64, 77, 90]
+celsius_temps = [(temp - 32) * 5 / 9 for temp in fahrenheit_temps]
+print("Fahrenheit Temperatures:", fahrenheit_temps)
+print("Celsius Temperatures:", celsius_temps)
+  
+Output: Fahrenheit Temperatures: [32, 45, 64, 77, 90]
+Output: Celsius Temperatures: [0.0, 7.222222222222222, 17.77777777777778, 25.0, 32.22222222222222]
+
+7. Write a menu-driven program to implement the stack data structure.
+def stack_program():
+    stack = []
+    while True:
+        print("\n1. Push\n2. Pop\n3. Display\n4. Exit")
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            element = input("Enter element to push: ")
+            stack.append(element)
+        elif choice == 2:
+            if stack:
+                print("Popped:", stack.pop())
+            else:
+                print("Stack is empty!")
+        elif choice == 3:
+            print("Stack:", stack)
+        elif choice == 4:
+            break
+        else:
+            print("Invalid choice!")
+stack_program()
+
+ Output: (Interactive program)
+
+8. Write a menu-driven program to implement the Queue data structure.
+def queue_program():
+    queue = []
+    while True:
+        print("\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit")
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            element = input("Enter element to enqueue: ")
+            queue.append(element)
+        elif choice == 2:
+            if queue:
+                print("Dequeued:", queue.pop(0))
+            else:
+                print("Queue is empty!")
+        elif choice == 3:
+            print("Queue:", queue)
+        elif choice == 4:
+            break
+        else:
+            print("Invalid choice!")
+queue_program()
+
+Output: (Interactive program)
+
+ 9. Take two lists of numbers. Create third list of numbers for only those numbers from first list which are not there in the 2nd list (use list comprehension).
+list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 6, 7, 8]
+list3 = [num for num in list1 if num not in list2]
+print("List 1:", list1)
+print("List 2:", list2)
+print("List 3:", list3)
+
+Output: List 1: [1, 2, 3, 4, 5]
+Output: List 2: [4, 5, 6, 7, 8]
+Output: List 3: [1, 2, 3]
