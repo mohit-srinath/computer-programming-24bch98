@@ -1,0 +1,80 @@
+FILE HANDLING 
+
+1. Write a program to create a csv file that we can directly open in MS-Excel
+import csv
+data = [["Roll No", "Name", "Marks1", "Marks2", "Marks3"], [1, "Alice", 85, 90, 95], [2, "Bob", 78, 82, 88], [3, "Charlie", 92, 87, 85]]
+with open("students.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+print("CSV file created successfully.")
+
+Output: CSV file created successfully. (students.csv can be opened in MS-Excel)
+
+ 2. Read the data stored in MS-Excel file and convert it into a dictionary
+import csv
+with open("students.csv", "r") as file:
+    reader = csv.DictReader(file)
+    student_data = {}
+    for row in reader:
+        total = int(row["Marks1"]) + int(row["Marks2"]) + int(row["Marks3"])
+        student_data[row["Roll No"]] = {"Name": row["Name"], "Marks": [row["Marks1"], row["Marks2"], row["Marks3"]], "Total": total}
+print(student_data)
+
+Output: {'1': {'Name': 'Alice', 'Marks': ['85', '90', '95'], 'Total': 270}, '2': {'Name': 'Bob', 'Marks': ['78', '82', '88'], 'Total': 248}, ...}
+
+ 3. Accept contact details from the user and create a vcard
+name = input("Enter Name: ")
+phone = input("Enter Phone Number: ")
+email = input("Enter Email: ")
+vcard = f"BEGIN:VCARD\nVERSION:3.0\nFN:{name}\nTEL:{phone}\nEMAIL:{email}\nEND:VCARD"
+with open("contact.vcf", "w") as file:
+    file.write(vcard)
+print("VCard created successfully.")
+
+Output: VCard created successfully. (contact.vcf can be saved to your mobile)
+
+ 4. Create a specific subdirectory and copy one file from another subdirectory to this newly created subdirectory
+import os
+import shutil
+os.makedirs("New_Subdirectory", exist_ok=True)
+shutil.copy("source_file.txt", "New_Subdirectory/destination_file.txt")
+print("File copied successfully.")
+
+Output: File copied successfully.
+
+ 5. Copy contents of one file to another, replacing all lowercase characters into uppercase
+with open("source.txt", "r") as src, open("destination.txt", "w") as dest:
+    dest.write(src.read().upper())
+print("File copied and converted to uppercase successfully.")
+
+Output: File copied and converted to uppercase successfully.
+
+ 6. Merge lines alternatively from two files into a new file
+with open("file1.txt", "r") as f1, open("file2.txt", "r") as f2, open("merged_file.txt", "w") as merged:
+    lines1, lines2 = f1.readlines(), f2.readlines()
+    for i in range(max(len(lines1), len(lines2))):
+        if i < len(lines1): merged.write(lines1[i])
+        if i < len(lines2): merged.write(lines2[i])
+print("Files merged successfully.")
+
+Output: Files merged successfully.
+
+ 7. Serialize and deserialize Employee object
+import pickle
+employee = {"empcode": 123, "empname": "John Doe", "Date of Joining": "2023-01-01", "Salary": 50000}
+with open("employee.pkl", "wb") as file:
+    pickle.dump(employee, file)
+with open("employee.pkl", "rb") as file:
+    deserialized_employee = pickle.load(file)
+print(deserialized_employee)
+
+Output: {'empcode': 123, 'empname': 'John Doe', 'Date of Joining': '2023-01-01', 'Salary': 50000}
+
+ 8. Create another text file deleting the words ‘a’, ‘the’, ‘an’ and replacing them with blank space
+with open("input.txt", "r") as src, open("output.txt", "w") as dest:
+    text = src.read()
+    for word in ["a", "the", "an"]:
+        text = text.replace(f" {word} ", " ")
+    dest.write(text)
+print("Words removed successfully.")
+
